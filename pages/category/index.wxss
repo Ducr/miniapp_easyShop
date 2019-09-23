@@ -1,0 +1,55 @@
+.cate-scroll {
+  /* 屏幕高度不包括tabBar的高度 */
+  /* 让less 不要编绎某段代码 => ~'代码段' */
+  height: calc(100vh - 90rpx);
+  overflow: hidden;
+  display: flex;
+}
+.cate-scroll .menu-group {
+  height: 100%;
+  width: 160rpx;
+}
+.cate-scroll .menu-group .scroll-item {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  background-color: #f3f3f3;
+  border-bottom: 2rpx solid #666;
+}
+.cate-scroll .menu-group .active {
+  color: var(--themeColor);
+  /* currentColor === 当前字体的颜色 */
+  border-left: 6rpx solid currentColor;
+  background-color: #fff;
+}
+.cate-scroll .goods-list {
+  flex: 1;
+}
+.cate-scroll .goods-list .goods-group .goods-group-title {
+  display: flex;
+  height: 80rpx;
+  font-size: 30rpx;
+  justify-content: center;
+  align-items: center;
+}
+.cate-scroll .goods-list .goods-group .goods-group-title .group-title {
+  margin: 0 10rpx;
+}
+.cate-scroll .goods-list .goods-group .goods-item-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cate-scroll .goods-list .goods-group .goods-item-content .goods-item {
+  width: 33.33%;
+  text-align: center;
+  display: flex;
+  font-size: 30rpx;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cate-scroll .goods-list .goods-group .goods-item-content .goods-item image {
+  width: 60%;
+}

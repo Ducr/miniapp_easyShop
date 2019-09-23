@@ -1,3 +1,44 @@
 <!-- 搜索框自定义组件 -->
 <SearchInput></SearchInput>
-  
+<!-- 分类数据展示框 -->
+<view class="cate-scroll">
+  <scroll-view class="menu-group" scroll-y="{{true}}">
+    <view class="scroll-item {{currentIndex===index?'active':''}}"
+      wx:for="{{menuList}}"
+      wx:for-index="index"
+      wx:for-item="item"
+      wx:key="*this"
+      bindtap="handleTap"
+      data-index="{{index}}"
+    >
+    {{item}}
+    </view>
+  </scroll-view>
+  <scroll-view  class="goods-list" scroll-y="{{true}}" scroll-top="{{scrollTop}}">
+  <view class="goods-group"
+    wx:for="{{goodsList}}"
+    wx:for-index="index1"
+    wx:for-item="item1"
+    wx:key="cat_id"
+  >
+    <view class="goods-group-title">
+      <text class="separator">/</text>
+      <text class="group-title">{{item1.cat_name}}</text>
+      <text class="separator">/</text>
+    </view>
+    <view class="goods-item-content"
+    >
+    <navigator  class="goods-item"
+      wx:for="{{item1.children}}"
+      wx:for-index="index2"
+      wx:for-item="item2"
+      wx:key="cat_id"
+      url="/pages/goods_list/index?cid={{item2.cat_id}}"
+      open-type="navigate">
+      <image mode="widthFix" src="{{item2.cat_icon}}"></image>
+      <view class="item_name">{{item2.cat_name}}</view>
+    </navigator>
+    </view>
+    </view>
+  </scroll-view>
+</view>

@@ -32,8 +32,6 @@ Page({
       url:"/home/catitems"
     })
       .then(res => {
-        
-        console.log(res)
         if (res.data.meta.status === 200) {
           this.setData({
             navList:res.data.message
@@ -50,7 +48,6 @@ Page({
       url:"/home/floordata"
     })
       .then(res => {
-        console.log(res)
         if (res.data.meta.status === 200) {
           this.setData({
             floorList:res.data.message
