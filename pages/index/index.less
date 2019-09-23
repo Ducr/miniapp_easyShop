@@ -1,0 +1,46 @@
+/* 轮播图样式 */
+.index-swiper {
+  /* 变化前高/变化前宽 = 变化后高/变化后宽  */
+    height: 750rpx * 340 / 750
+}
+/* 导航样式 */
+.index-nav{
+  display: flex;
+  navigator{
+    flex: 1; 
+    padding: 20rpx;
+  }
+}
+/* 楼层样式 */
+
+.floor-group {
+  .floor-title{
+    margin:10rpx 0;
+    image{
+    }
+  }
+  .product-list {
+    /* 清除浮动 */
+    overflow: hidden;
+    padding: 0 6rpx;
+    .list-item {
+      float: left;
+      width: 33.33%;
+      image {
+        }
+    }
+    .list-item:nth-child(2n){
+      border-left: 6rpx solid transparent;
+      border-right: 6rpx solid transparent;
+    }
+    .list-item:nth-last-child(-n+4){
+      height: 750rpx /3 * 386 / 232 / 2 - 6rpx;
+    }
+    .list-item:nth-last-child(-n+2){
+      margin-top: 6rpx
+    }
+    image{
+      height: 100%;
+    }
+  }
+}

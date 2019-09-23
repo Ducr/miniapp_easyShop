@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "SearchInput":"../../components/searchInput/index"
+  },
+"navigationBarTitleText": "首页"
+}
