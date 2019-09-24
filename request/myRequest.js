@@ -11,7 +11,8 @@ export const request = (params) => {
     mask: true
   })
   // 设置公共的url
-  const baseURL = "https://api.zbztb.cn/api/public/v1";
+  const baseURL = "https://api.zbztb.cn/api/public/v1"
+  // 这个代码段 会在 promise 被new的时候就执行了
   return new Promise((resolve, reject) => {
     wx.request({
       ...params,

@@ -51,5 +51,7 @@
   align-items: center;
 }
 .cate-scroll .goods-list .goods-group .goods-item-content .goods-item image {
-  width: 60%;
+  /* 将图片显示的宽高给个固定值，切换菜单时就不会变形了 */
+  width: 118rpx;
+  height: 118rpx;
 }

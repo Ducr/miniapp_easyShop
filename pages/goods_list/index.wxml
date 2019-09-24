@@ -1,2 +1,30 @@
-<!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+<!--搜索输入框 -->
+<SearchInput></SearchInput>
+<!-- 商品顶部tab栏 -->
+<view class="goods-tab">
+<!-- tab栏自定义组件 -->
+<GoodsTab titleList="{{titleList}}"
+  currentIndex="{{currentIndex}}"
+  bindchangeIndex="handleChangeIndex"
+>
+<view class="goods-content" wx:if="{{currentIndex === 0}}">
+  <navigator class="goods-item"
+  url="/pages/goods_detail/index?goods_id={{item.goods_id}}" 
+  open-type="navigate"
+  wx:for="{{goodsList}}"
+  wx:key="goods_id"
+  >
+    <view  class="goods-image" >
+      <image src="{{item.goods_small_logo?item.goods_small_logo:picture}}" mode="widthFix"/>    
+    </view>
+    <view class="goods-info">
+      <view class="goods-name">{{item.goods_name}}</view>
+      <view class="goods-price">￥{{item.goods_price}}</view>
+    </view>
+  </navigator>
+  <view class="bottom-remind" wx:if="{{isShow}}">------没有数据了------</view>
+</view>
+<view wx:elif="{{currentIndex === 1}}">销量</view>
+<view wx:else>价格</view>
+</GoodsTab>
+</view>

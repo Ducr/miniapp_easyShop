@@ -14,7 +14,9 @@
     {{item}}
     </view>
   </scroll-view>
-  <scroll-view  class="goods-list" scroll-y="{{true}}" scroll-top="{{scrollTop}}">
+  <scroll-view  class="goods-list" scroll-y="{{true}}" 
+    bindscrolltolower="handleLower"
+    scroll-top="{{scrollTop}}">
   <view class="goods-group"
     wx:for="{{goodsList}}"
     wx:for-index="index1"

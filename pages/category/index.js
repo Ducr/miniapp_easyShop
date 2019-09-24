@@ -12,6 +12,17 @@ Page({
   onLoad() {
     this.loadCateData()
   },
+  handleLower() {
+    console.log(111111111111111111)
+    let index = this.data.currentIndex
+    const goodsListOld = this.Cates[index].children
+    index++
+    const goodsListNew = this.Cates[index].children
+    this.setData({
+      currentIndex: index,
+      goodsList:[...goodsListOld,goodsListNew]
+    })
+  },
   loadCateData() {
     // 小程序中的同步的 本地存储 存值 可以存储任意的类型
     // 获取本地存储的数据

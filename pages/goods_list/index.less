@@ -1,0 +1,46 @@
+.goods-tab {
+  Goodstab {
+    .goods-content {
+      .goods-item {
+        display: flex;
+        padding: 20rpx 0;
+        border-bottom: 2rpx solid #ccc;
+        .goods-image {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          image{
+            /* 给个固定大小，图片过渡时不会变形扭曲 */
+            width: 750rpx / 3 - 90rpx;
+            height: 750rpx / 3 - 90rpx;
+          }
+        }
+        .goods-info {
+          flex: 2;
+          padding: 20rpx;
+          font-size: 30rpx; 
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          /* 设置文本第二行溢出时变为 ... */
+          .goods-name {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+          }
+          .goods-price {
+            margin-top: 20rpx;
+            font-size: 32rpx;
+            color: var(--themeColor);
+          }
+        }
+      }
+    }
+  }
+  .bottom-remind{
+    text-align: center;
+    color: #999;
+  }
+}

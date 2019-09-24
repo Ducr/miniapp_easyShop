@@ -49,7 +49,10 @@
           justify-content: center;
           align-items: center;
           image{
-            width: 60%;
+            /* 将图片显示的宽高给个固定值，切换菜单时就不会变形了 */
+            width: (750rpx - 160rpx) * 0.6 / 3;
+            height: (750rpx - 160rpx) * 0.6 / 3;
+            // width: 60%;
           }
         }
       }
