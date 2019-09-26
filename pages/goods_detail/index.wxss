@@ -1,0 +1,79 @@
+page {
+  padding-bottom: 90rpx;
+}
+.goods-detail .goods-swiper swiper {
+  height: 500rpx;
+}
+.goods-detail .goods-price {
+  padding: 20rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: var(--themeColor);
+}
+.goods-detail .goods-info {
+  display: flex;
+  border-top: 1rpx solid #ccc;
+  border-bottom: 1rpx solid #ccc;
+  padding: 10rpx;
+}
+.goods-detail .goods-info .goods-name {
+  flex: 5;
+  font-size: 32rpx;
+  color: #000;
+  border-right: 1rpx solid #000;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.goods-detail .goods-info .goods-collect {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.goods-detail .detail-info .detail-tilte {
+  padding: 20rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: var(--themeColor);
+}
+.goods-detail .tool-bar {
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  border-top: 1rpx solid #ccc;
+}
+.goods-detail .tool-bar .tool-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.goods-detail .tool-bar .tool-item button {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+}
+.goods-detail .tool-bar .btn-cart,
+.goods-detail .tool-bar .btn-buy {
+  flex: 2;
+  color: #fff;
+  font-weight: 600;
+}
+.goods-detail .tool-bar .btn-cart {
+  background-color: #fea410;
+}
+.goods-detail .tool-bar .btn-buy {
+  background-color: var(--themeColor);
+}
