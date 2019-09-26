@@ -1,0 +1,134 @@
+.address {
+  button {
+    width: 60%;
+    display: block;
+    margin: 20rpx auto;
+  }
+  .address-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx;
+    color: #000;
+    font-size: 30rpx;
+  }
+}
+.cart {
+  .cart-title {
+    color: var(--themeColor);
+    border-top: 2rpx solid currentColor;
+    border-bottom: 2rpx solid currentColor;
+    font-size: 36rpx;
+    padding: 20rpx;
+  }
+  .cart-list {
+    .cart-item {
+      display: flex;
+      border-bottom: 2rpx solid #ccc;
+      padding: 5rpx 0;
+      .cart-chb-wrap {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .cart-img-wrap {
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        image {
+          width: 80%;
+        }
+      }
+      .cart-info-wrap {
+        flex: 4;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        /* 因为内容过多子项会撑开，去挤压其他的子项，导致每个item里面的子项的宽度不一样，显示的图片大小不一样*/
+        /* 加上 overflow：hidden 进行处理*/
+        overflow: hidden;
+        .goods-name {
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          font-size: 30rpx;
+        }
+        .cart-tool {
+          display: flex;
+          justify-content: space-between;
+          padding: 10rpx;
+          .goods-price {
+            color: var(--themeColor);
+            font-size: 36rpx;
+          }
+          .goods-nums-wrap {
+            display: flex;
+            view {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 33rpx;
+            }
+            .btn-num {
+              border: 2rpx solid #ccc;
+              width: 60rpx;
+              height: 60rpx;
+            }
+
+            .goods-num {
+              margin: 0 20rpx;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.btm-cart {
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border-top: 1rpx solid #ccc;
+  display: flex;
+  .cart-all-wrap {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    checkbox-group {
+    }
+  }
+
+  .total-price-wrap {
+    text-align: right;
+    padding: 5rpx;
+    flex: 6;
+    .total-price1 {
+      text {
+        font-weight: 600;
+        font-size: 30rpx;
+        color: var(--themeColor);
+      }
+    }
+
+    .total-price2 {
+    }
+  }
+
+  .cart-order {
+    flex: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: var(--themeColor);
+    font-size: 600px;
+    font-size: 34rpx;
+  }
+}

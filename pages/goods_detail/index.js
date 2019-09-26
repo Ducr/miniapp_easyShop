@@ -15,7 +15,7 @@ Page({
       data:{ goods_id:goodsId }
     })
       .then(res => {
-        console.log(res)
+        // console.log(res)
         this.setData({
         goodsData:res.data.message
       })
@@ -50,7 +50,8 @@ Page({
         goods_name: goodsData.goods_name,
         goods_price: goodsData.goods_price,
         goods_small_logo: goodsData.goods_small_logo,
-        goods_num: 1
+        goods_num: 1,
+        checked:true
       })
     } else {
       // 商品对象已存在---------修改商品对象的数量，加 1 
