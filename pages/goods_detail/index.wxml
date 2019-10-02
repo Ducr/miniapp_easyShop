@@ -30,8 +30,8 @@
     <view class="goods-name">
     {{goodsData.goods_name}}
     </view>
-    <view class="goods-collect">
-      <text class="iconfont icon-shoucang"></text>
+    <view class="goods-collect" bindtap="handleItemCollect">
+      <text class="iconfont {{isCollect===true?'icon-shoucang1':'icon-shoucang'}}"></text>
       <view>收藏</view>
     </view>
   </view>

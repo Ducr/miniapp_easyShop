@@ -44,10 +44,10 @@
           <view class="goods-price">￥{{item.goods_price}}</view>
           <view class="goods-nums-wrap">
             <view class="btn-num" data-index="{{index}}" bindtap="handleNumUpdate" data-operation="{{-1}}"  >-</view>
-            <view class="goods-num">{{item.goods_num}}</view>
-            <!-- <view class="goods-num">
-              <input type="text" value="{{item.goods_num}}" bindblur="handleGoodsInput" data-index="{{index}}" data-value="{{item.goods_num}}" />
-            </view> -->
+            <!-- <view class="goods-num">{{item.goods_num}}</view> -->
+            <view class="goods-num">
+              <input type="text" value="{{item.goods_num}}" bindblur="handleGoodsInput" data-index="{{index}}" />
+            </view>
             <view class="btn-num" data-index="{{index}}" bindtap="handleNumUpdate" data-operation="{{1}}" >+</view>
           </view>
         </view>

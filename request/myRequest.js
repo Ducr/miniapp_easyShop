@@ -4,7 +4,7 @@ let requestTimes = 0;
 // 1.封装 promise 形式的请求的函数
 export const request = (params) => {
   // 自动判断是否需要带token 依据：判断url上有无  /my/
-  let regexp = RegExp('^/my/')
+  let regexp = new RegExp('^\/my\/')
   let header = { ...params.header }
   // let header = {}
   if (regexp.test(params.url)) {

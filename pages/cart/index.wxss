@@ -77,14 +77,20 @@
   height: 60rpx;
 }
 .cart .cart-list .cart-item .cart-info-wrap .cart-tool .goods-nums-wrap .goods-num {
-  margin: 0 20rpx;
+  margin: 0 5rpx;
 }
 .cart .cart-list .cart-item .cart-info-wrap .cart-tool .goods-nums-wrap .goods-num input {
   height: 60rpx;
-  width: 90rpx;
+  width: 80rpx;
   text-align: center;
   line-height: 60rpx;
-  background-color: aqua;
+  display: inline-block;
+  overflow: hidden;
+  /* 超出的文本隐藏 */
+  text-overflow: ellipsis;
+  /* 溢出用省略号显示 */
+  white-space: nowrap;
+  /* 溢出不换行 */
 }
 .btm-cart {
   width: 100%;

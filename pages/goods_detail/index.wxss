@@ -33,6 +33,9 @@ page {
   justify-content: center;
   align-items: center;
 }
+.goods-detail .goods-info .goods-collect .icon-shoucang1 {
+  color: orange;
+}
 .goods-detail .detail-info .detail-tilte {
   padding: 20rpx;
   font-size: 30rpx;

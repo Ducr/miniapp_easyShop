@@ -13,7 +13,7 @@ Page({
     totalPrice:0,
     // 总数量
     totalNum: 0,
-    inputVal:0
+    inputVal: []
   },
   // 生命周期函数--监听页面显示
   onShow() {
@@ -183,12 +183,40 @@ Page({
     wx.navigateTo({
       url: '/pages/pay/index'
     })
+  },
+  // 编辑购物车商品数量---------------------
+  handleGoodsInput(e) {
+    const { value } = e.detail
+    const { index } = e.target.dataset
+    // 获取本地储存数据，将合规的输入值修改到对应的index商品goods_num
+    let carts = wx.getStorageSync('carts')
+    // 1.输入值进行非数字类型输入值判断
+    let regexp = new RegExp('\\D+')
+    // let regexp = /\D+/
+    if (!regexp.test(value)) {
+      // 无非数字类型输入值
+      // 2.需要判断输入值 转换后是否为 NaN
+    if (!isNaN(parseInt(value))) {
+      // 不是NaN非数值，修改商品数量 
+      carts.forEach((v,i) => {
+        if (i === index) {
+          v.goods_num = parseInt(value)
+        }
+      })
+    } else {
+      // 是NaN非数值，进行弹窗提示,不修改数值
+      showToast({ title: '请输入正确数字',icon:'none',mask:true})
+    }
+    } else {
+      // 存在非数字类型输入值，进行弹窗提示,不修改数值
+      showToast({ title: '请输入正确数字',icon:'none',mask:true})
+    }
+    // 同步 data 和 本地存储
+    this.setData({
+      carts
+    })
+    wx.setStorageSync("carts", carts)
+    // 刷新页面
+    this.countCartData(carts)
   }
-  // ,
-  // handleGoodsInput(e) {
-  //   console.log(e)
-  //   this.setData({
-  //     inputVal:e.detail.value
-  //   })
-  // }
 })
