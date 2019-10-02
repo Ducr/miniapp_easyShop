@@ -14,7 +14,7 @@ Page({
     // 获取缓存中的地址    默认值为空字符串
     const address = wx.getStorageSync('address')
     // 获取缓存中的购物车数据
-    let carts = wx.getStorageSync("carts")
+    let carts = wx.getStorageSync("carts") || []
     // 筛选出checked = true 的数据
     carts.filter(v => v.checked)
     this.setData({

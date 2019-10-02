@@ -12,7 +12,8 @@ Page({
     // 总价格
     totalPrice:0,
     // 总数量
-    totalNum:0
+    totalNum: 0,
+    inputVal:0
   },
   // 生命周期函数--监听页面显示
   onShow() {
@@ -39,7 +40,7 @@ Page({
   //     当用户满足 2、3 的状态 直接获取用户的收货地址 
   // 3 通过 async的代码 来简化以上过程
   //   1 把   wx.getSetting 、 wx.openSetting 、wx.chooseAddress 
-  //     改成 promise的形式 
+  //     改成 promise的形式
   // 4 把收货地址存入到 缓存中（下次打开小程序获取页面使用） 和 data（给页面渲染要用的）
 
   // 1.处理获取收货地址-------------------------
@@ -132,7 +133,12 @@ Page({
       let res = await showModal({title:'温馨提示',content:'您确认要删除该商品吗？'}) //返回结果为布尔值  确认 ——> true 、取消 ——> false
       if (res) {
         // 点击确认删除
-        carts.splice(index,1)
+        carts.splice(index, 1)
+        showToast({
+          title: '删除商品成功！',
+          icon: 'success',
+          mask: true
+        })
       } else {
         // 点击取消，因为，未修改商品数据，停止后续操作
         return
@@ -178,4 +184,11 @@ Page({
       url: '/pages/pay/index'
     })
   }
+  // ,
+  // handleGoodsInput(e) {
+  //   console.log(e)
+  //   this.setData({
+  //     inputVal:e.detail.value
+  //   })
+  // }
 })

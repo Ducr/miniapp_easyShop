@@ -79,6 +79,13 @@
 .cart .cart-list .cart-item .cart-info-wrap .cart-tool .goods-nums-wrap .goods-num {
   margin: 0 20rpx;
 }
+.cart .cart-list .cart-item .cart-info-wrap .cart-tool .goods-nums-wrap .goods-num input {
+  height: 60rpx;
+  width: 90rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background-color: aqua;
+}
 .btm-cart {
   width: 100%;
   height: 90rpx;

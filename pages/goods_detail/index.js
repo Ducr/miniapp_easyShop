@@ -62,7 +62,7 @@ Page({
     // 弹框提示用户加入购物车成功
     wx.showToast({
       title: '加入购物车成功',
-      icon: 'none',
+      icon: 'success',
       mask: true
     })
   }
