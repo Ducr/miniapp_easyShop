@@ -3,6 +3,13 @@
 let requestTimes = 0;
 // 1.封装 promise 形式的请求的函数
 export const request = (params) => {
+  // 自动判断是否需要带token 依据：判断url上有无  /my/
+  let regexp = RegExp('^/my/')
+  let header = { ...params.header }
+  // let header = {}
+  if (regexp.test(params.url)) {
+    header['Authorization'] = wx.getStorageSync('token')
+  }
   // 发送一次，递增一次
   requestTimes++
   // 添加加载条
@@ -18,6 +25,8 @@ export const request = (params) => {
     wx.request({
       ...params,
       url: baseURL + params.url,
+      header,
+      // header:{ ...header,...params.header }
       success: (result) => {
         resolve(result)
       },
@@ -93,6 +102,34 @@ export const showToast = (params) => {
       ...params,
       success: (result) => {
         resolve(result)
+      }
+    })
+  })
+}
+// 7.封装 promise 形式的 wx.requestPayment
+export const requestPayment = (pay) => {
+  return new Promise((resolve, reject) => {
+    wx.requestPayment({
+      ...pay,
+      success: (result) => {
+        resolve(result)
+      },
+      fail: (err) => {
+        reject(err)
+      }
+    })      
+  })
+}
+// 8.封装 promise 形式的 wx.requestPayment
+export const login = () => {
+  return new Promise((resolve, reject) => {
+    wx.login({
+      timeout:10000,
+      success: (result) => {
+        resolve(result)
+      },
+      fail: (err) => {
+        reject(err)
       }
     })
   })
